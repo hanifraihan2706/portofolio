@@ -79,22 +79,23 @@
       letter-spacing:-0.02em;margin-bottom:1rem;}
     .section-sub{color:var(--text-muted);font-size:1rem;max-width:540px;margin-bottom:3.5rem;}
 
-    /* ABOUT */
+/* ABOUT */
     #about{background:var(--bg-surface);}
-    .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start;}
+    .about-grid{display:flex;flex-direction:column;align-items:center;text-align:center;gap:2rem;}
+    .about-text{max-width:800px;width:100%;display:flex;flex-direction:column;align-items:center;}
     .about-text p{color:var(--text-muted);margin-bottom:1.2rem;font-size:0.97rem;}
     .about-text p strong{color:var(--text-primary);font-weight:500;}
-    .about-right{display:flex;flex-direction:column;gap:1.5rem;align-items:center;}
+    .about-right{display:flex;flex-direction:column;gap:1.5rem;align-items:center;width:100%;max-width:900px;}
     .profile-photo{width:160px;height:160px;border-radius:50%;border:2px solid var(--border-hl);
-      object-fit:cover;box-shadow:0 0 40px var(--accent-glow);}
+      object-fit:cover;box-shadow:0 0 40px var(--accent-glow);margin:1.5rem auto;display:block;}
     .profile-photo-placeholder{width:160px;height:160px;border-radius:50%;border:2px dashed var(--border-hl);
       background:var(--bg-card);display:flex;flex-direction:column;align-items:center;
       justify-content:center;gap:0.4rem;color:var(--text-dim);font-family:var(--mono);
       font-size:0.62rem;text-align:center;letter-spacing:0.05em;padding:1rem;}
     .profile-photo-placeholder .ph-icon{font-size:2rem;}
-    .about-pillars{display:grid;grid-template-columns:1fr 1fr;gap:1rem;width:100%;}
+    .about-pillars{display:grid;grid-template-columns:repeat(auto-fit, minmax(240px, 1fr));gap:1rem;width:100%;margin-top:1.5rem;}
     .pillar{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);
-      padding:1.2rem;transition:border-color 0.25s,transform 0.25s var(--ease);}
+      padding:1.2rem;transition:border-color 0.25s,transform 0.25s var(--ease);text-align:left;}
     .pillar:hover{border-color:var(--border-hl);transform:translateY(-3px);}
     .pillar-icon{font-size:1.4rem;margin-bottom:0.6rem;}
     .pillar-title{font-family:var(--heading);font-weight:600;font-size:0.88rem;color:var(--text-primary);margin-bottom:0.25rem;}
@@ -380,7 +381,7 @@
       <!-- ─── PROJECT 3: AI Finance Tracker ────────────────────── -->
       <div class="project-card reveal reveal-delay-3">
         <div class="card-img">
-          <!-- <img class="project-screenshot" src="assets/screenshot-finance.png" alt="AI Finance Tracker" /> -->
+          <!-- <img class="project-screenshot" src="tele_bot.jpg" alt="AI Finance Tracker" /> -->
           <div class="card-img-placeholder">
             <div class="card-img-bg"></div>
             <div class="card-img-icon">🤖</div>
