@@ -292,45 +292,65 @@
     <p class="section-sub reveal reveal-delay-2">Each project addresses a specific business constraint — measured in hours saved, errors eliminated, or decisions improved.</p>
     <div class="projects-grid">
 
-      <!-- ─── PROJECT 1: Auction Minutes ───────────────────────── -->
-<div class="project-card reveal reveal-delay-1">
-  <div class="card-img">
-    <img class="project-screenshot" src="lelang_apps.png" alt="Auction Minutes App" />
-    <span class="card-badge">Legal & Admin Automation</span>
-  </div> <div class="card-body">
-    <h3 class="card-title">Auction Minutes Automation System</h3>
-    <div class="card-rows">
-      <div>
-        <div class="card-row-label">Problem</div>
-        <div class="card-row-text">Manual preparation of auction minutes required repetitive reformatting, legal data entry, and multi-page layout adjustments — consuming up to 6 hours per document with high risk of human error.</div>
+      <div class="project-card reveal reveal-delay-1">
+        <div class="card-img">
+          <img class="project-screenshot" src="lelang_apps.png" alt="Auction Minutes App" />
+          <span class="card-badge">Legal & Admin Automation</span>
+        </div>
+        <div class="card-body">
+          <h3 class="card-title">Auction Minutes Automation System</h3>
+          <div class="card-rows">
+            <div>
+              <div class="card-row-label">Problem</div>
+              <div class="card-row-text">Manual preparation of auction minutes required repetitive reformatting, legal data entry, and multi-page layout adjustments — consuming up to 6 hours per document with high risk of human error.</div>
+            </div>
+            <div>
+              <div class="card-row-label">Solution</div>
+              <div class="card-row-text">Built a Python desktop application using <code style="color:var(--accent);font-size:0.82em;">python-docx</code> and a Tkinter GUI to parse structured input and generate standardized, print-ready legal documents — complete with conditional per-page footers and multi-line address handling.</div>
+            </div>
+          </div>
+          <div class="card-metric">
+            <div class="metric-icon">⚡</div>
+            <div class="metric-text">
+              <div class="metric-value-text">6 hours → under 1 minute</div>
+              <div class="metric-label-text">Document preparation time · 100% format standardization</div>
+            </div>
+          </div>
+          <div class="card-footer">
+            <div class="card-tags">
+              <span class="tag tag-accent">Python</span>
+              <span class="tag tag-accent">python-docx</span>
+              <span class="tag">Tkinter</span>
+              <span class="tag">openpyxl</span>
+            </div>
+            <a href="https://pl2rino.streamlit.app/" target="_blank" class="btn-demo">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              Live Demo
+            </a>
+          </div>
+        </div>
       </div>
-      <div>
-        <div class="card-row-label">Solution</div>
-        <div class="card-row-text">Built a Python desktop application using <code style="color:var(--accent);font-size:0.82em;">python-docx</code> and a Tkinter GUI to parse structured input and generate standardized, print-ready legal documents — complete with conditional per-page footers and multi-line address handling.</div>
-      </div>
-    </div>
-    <div class="card-metric">
-      <div class="metric-icon">⚡</div>
-      <div class="metric-text">
-        <div class="metric-value-text">6 hours → under 1 minute</div>
-        <div class="metric-label-text">Document preparation time · 100% format standardization</div>
-      </div>
-    </div>
-    <div class="card-footer">
-      <div class="card-tags">
-        <span class="tag tag-accent">Python</span>
-        <span class="tag tag-accent">python-docx</span>
-        <span class="tag">Tkinter</span>
-        <span class="tag">openpyxl</span>
-      </div>
-      <a href="https://pl2rino.streamlit.app/" target="_blank" class="btn-demo">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-        Live Demo
-      </a>
-    </div>
-  </div> </div>
 
-      <!-- ─── PROJECT 2: Digital Product Catalog ───────────────── -->
+      <div class="project-card reveal reveal-delay-2">
+        <div class="card-img">
+          <img class="project-screenshot" src="katalog.png" style="filter: blur(4px); transform: scale(1.05);" alt="Product Catalog" />
+          <div style="position: absolute; inset: 0; background: rgba(10,15,26,0.4); display: flex; align-items: center; justify-content: center; z-index: 1;">
+            <span style="font-family: var(--mono); font-size: 0.7rem; color: #fff; border: 1px solid rgba(255,255,255,0.3); padding: 0.5rem 1rem; border-radius: 6px; text-transform: uppercase; letter-spacing: 0.1em; background: rgba(10,15,26,0.7); backdrop-filter: blur(2px);">
+              🔒 Confidential Data
+            </span>
+          </div>
+          <span class="card-badge">Web App · Google Apps Script</span>
+        </div>
+        <div class="card-body">
+          <h3 class="card-title">Digital Product Catalog Web App</h3>
+          <div class="card-rows">
+            <div>
+              <div class="card-row-label">Problem</div>
+              <div class="card-row-text">Product information was scattered across spreadsheets with no accessible, shareable interface for internal teams or customers — making it difficult to browse, filter, and reference product data in real-time.</div>
+            </div>
+            <div>
+              <div class="card-row-label">Solution</div>
+              <div class="card-row-text">Built a web-based product catalog using Google Apps Script and Tailwind CSS, deployed directly from Google Sheets as the data source. The app renders product listings dynamically with a clean, SaaS-style interface accessible via a shareable URL — no server required.</div>
             </div>
           </div>
           <div class="card-metric">
@@ -346,7 +366,7 @@
               <span class="tag tag-accent">Tailwind CSS</span>
               <span class="tag">Google Sheets</span>
               <span class="tag">Web App</span>
-              <span class="tag">No-Server Deploy</span
+              <span class="tag">No-Server Deploy</span>
             </div>
             <a href="https://script.google.com/macros/s/AKfycbwtjcR37Ob5UQCSibaARngm5zAOe-WQiZ1W7N4K3vdcSUcFZg4E5OjCc-IA_-agecK-/exec" target="_blank" class="btn-demo">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
@@ -355,15 +375,10 @@
           </div>
         </div>
       </div>
-      <!-- ─── PROJECT 3: AI Finance Tracker ────────────────────── -->
+
       <div class="project-card reveal reveal-delay-3">
         <div class="card-img">
-      <img class="project-screenshot" src="tele_bot.jpg" alt="AI Finance Tracker" />
-          <div class="card-img-placeholder">
-            <div class="card-img-bg"></div>
-            <div class="card-img-icon">🤖</div>
-            <span class="placeholder-text">screenshot-finance.png</span>
-          </div>
+          <img class="project-screenshot" src="tele_bot.jpg" alt="AI Finance Tracker" />
           <span class="card-badge">AI-Powered Integration</span>
         </div>
         <div class="card-body">
@@ -397,11 +412,10 @@
               Try on Telegram
             </a>
           </div>
-          </div>
         </div>
+      </div>
 
-      <!-- ─── PROJECT 4 ──────────────────────── -->
-<div class="project-card reveal reveal-delay-2">
+      <div class="project-card reveal reveal-delay-1">
         <div class="card-img">
           <img class="project-screenshot" src="email_blast.jpg" style="filter: blur(4px); transform: scale(1.05);" alt="AI Email Automation & Tracker" />
           <div style="position: absolute; inset: 0; background: rgba(10,15,26,0.4); display: flex; align-items: center; justify-content: center; z-index: 1;">
@@ -411,7 +425,6 @@
           </div>
           <span class="card-badge">Marketing Automation & CRM</span>
         </div>
-
         <div class="card-body">
           <h3 class="card-title">AI-Powered Personalized Email Engine & Engagement Tracker</h3>
           <div class="card-rows">
@@ -442,7 +455,7 @@
         </div>
       </div>
 
-      <div class="project-card reveal reveal-delay-1">
+      <div class="project-card reveal reveal-delay-2">
         <div class="card-img">
           <img class="project-screenshot" src="appsheet.jpg" style="filter: blur(4px); transform: scale(1.05);" alt="Mobile Inventory App" />
           <div style="position: absolute; inset: 0; background: rgba(10,15,26,0.4); display: flex; align-items: center; justify-content: center; z-index: 1;">
@@ -482,7 +495,7 @@
         </div>
       </div>
 
-      <div class="project-card reveal reveal-delay-2">
+      <div class="project-card reveal reveal-delay-3">
         <div class="card-img">
           <img class="project-screenshot" src="dashboard.jpg" style="filter: blur(4px); transform: scale(1.05);" alt="Commercial Dashboard" />
           <div style="position: absolute; inset: 0; background: rgba(10,15,26,0.4); display: flex; align-items: center; justify-content: center; z-index: 1;">
@@ -522,7 +535,7 @@
         </div>
       </div>
 
-      <div class="project-card reveal reveal-delay-2">
+      <div class="project-card reveal reveal-delay-1">
         <div class="card-img">
           <img class="project-screenshot" src="Screenshot 2026-02-19 at 10.29.28.png" style="filter: blur(4px); transform: scale(1.05);" alt="Stock Reconciliation Dashboard" />
           <div style="position: absolute; inset: 0; background: rgba(10,15,26,0.4); display: flex; align-items: center; justify-content: center; z-index: 1;">
@@ -565,7 +578,6 @@
     </div>
   </div>
 </section>
-
 <!-- ═══════════ SKILLS ═══════════ -->
 <section id="skills">
   <div class="container">
