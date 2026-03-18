@@ -7,6 +7,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=IBM+Plex+Mono:wght@400;500&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet" />
+ 
   <style>
     :root {
       --bg:#0a0f1a; --bg-card:#0f1724; --bg-surface:#141e2e;
@@ -220,6 +221,33 @@
       .about-pillars{grid-template-columns:1fr;}
       .hero-stats{gap:1.5rem;}
     }
+    /* Efek saat tombol ditekan agar terasa membal */
+.btn {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+.btn:active {
+  transform: scale(0.95);
+}
+
+/* Membuat navigasi lebih bercahaya saat disentuh */
+.nav-links a:hover {
+  color: var(--accent) !important;
+  text-shadow: 0 0 10px var(--accent-glow);
+}
+
+/* Persiapan untuk efek 3D pada kartu proyek */
+.project-card {
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+
+/* Animasi kecil untuk label skill/tag */
+.tag:hover {
+  background: var(--accent) !important;
+  color: #fff !important;
+  transform: translateY(-3px);
+  transition: all 0.2s ease;
+}
   </style>
 </head>
 <body>
@@ -716,21 +744,74 @@
   <p>© <span id="year"></span> Muhammad Hanif Raihan &nbsp;·&nbsp; Built with <span>precision</span>, not templates.</p>
 </footer>
 
-<script>
-  document.getElementById('year').textContent = new Date().getFullYear();
-  const toggle = document.getElementById('navToggle');
-  const navLinks = document.getElementById('navLinks');
-  toggle.addEventListener('click', () => navLinks.classList.toggle('open'));
-  function closeMenu(){ navLinks.classList.remove('open'); }
-  const reveals = document.querySelectorAll('.reveal');
-  const obs = new IntersectionObserver((entries) => {
-    entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('visible'); obs.unobserve(e.target); } });
-  }, { threshold:0.12, rootMargin:'0px 0px -40px 0px' });
-  reveals.forEach(el => obs.observe(el));
-  window.addEventListener('scroll', () => {
-    document.getElementById('navbar').style.background =
-      window.scrollY > 40 ? 'rgba(10,15,26,0.97)' : 'rgba(10,15,26,0.82)';
-  });
-</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.1/vanilla-tilt.min.js"></script>
+
+  <script>
+    // Registrasi Plugin GSAP
+    gsap.registerPlugin(ScrollTrigger);
+
+    // --- A. FUNGSI DASAR (Tahun, Menu Mobile, Navbar) ---
+    document.getElementById('year').textContent = new Date().getFullYear();
+    
+    const toggle = document.getElementById('navToggle');
+    const navLinks = document.getElementById('navLinks');
+    
+    toggle.addEventListener('click', () => navLinks.classList.toggle('open'));
+    
+    function closeMenu(){ 
+      navLinks.classList.remove('open'); 
+    }
+
+    window.addEventListener('scroll', () => {
+      document.getElementById('navbar').style.background =
+        window.scrollY > 40 ? 'rgba(10,15,26,0.97)' : 'rgba(10,15,26,0.82)';
+    });
+
+    // --- B. ANIMASI GSAP (HALUS & INTERAKTIF) ---
+
+    // 1. Animasi Hero saat pertama kali dibuka
+    const tl = gsap.timeline();
+    tl.from(".hero-label", { opacity: 0, y: 20, duration: 0.8, ease: "power3.out" })
+      .from(".hero-name", { opacity: 0, y: 30, duration: 1, ease: "power4.out" }, "-=0.4")
+      .from(".hero-title, .hero-desc, .hero-cta", { 
+        opacity: 0, 
+        y: 20, 
+        duration: 0.8, 
+        stagger: 0.2, 
+        ease: "power3.out" 
+      }, "-=0.6")
+      .from(".stat", { 
+        opacity: 0, 
+        y: 20, 
+        duration: 0.6, 
+        stagger: 0.1, 
+        ease: "power2.out" 
+      }, "-=0.4");
+
+    // 2. Animasi Reveal saat di-scroll (Menggantikan IntersectionObserver lama)
+    gsap.utils.toArray(".reveal").forEach((elem) => {
+      gsap.from(elem, {
+        scrollTrigger: {
+          trigger: elem,
+          start: "top 85%",
+          toggleActions: "play none none none"
+        },
+        opacity: 0,
+        y: 50,
+        duration: 1,
+        ease: "power2.out"
+      });
+    });
+
+    // --- C. EFEK 3D TILT (KARTU PROYEK) ---
+    VanillaTilt.init(document.querySelectorAll(".project-card"), {
+      max: 10,       // Kemiringan maksimal (derajat)
+      speed: 400,    // Kecepatan transisi
+      glare: true,   // Efek kilauan cahaya
+      "max-glare": 0.2, // Intensitas kilauan
+    });
+  </script>
 </body>
 </html>
